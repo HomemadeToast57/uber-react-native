@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import HomeScreen from "./screens/HomeScreen";
 import MapScreen from "./screens/MapScreen";
 import EatsScreen from "./screens/EatsScreen";
-import { store } from "./store";
+import { store } from "./store/store";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";

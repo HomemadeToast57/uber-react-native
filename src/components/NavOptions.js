@@ -10,13 +10,13 @@ const data = [
   {
     id: 123,
     title: "Get a ride",
-    image: require("../assets/UberX_1.png"),
+    image: require("../assets/images/UberX_1.png"),
     screen: "MapScreen",
   },
   {
     id: 456,
     title: "Order food",
-    image: require("../assets/Food.png"),
+    image: require("../assets/images/Food.png"),
     screen: "EatsScreen",
   },
 ];

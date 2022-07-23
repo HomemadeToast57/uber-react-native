@@ -19,19 +19,19 @@ const data = [
     id: "Uber-X-123",
     title: "UberX",
     multiplier: 1,
-    image: require("../assets/UberX.png")
+    image: require("../assets/images/UberX.png")
   },
   {
     id: "Uber-XL-456",
     title: "UberXL",
     multiplier: 1.2,
-    image: require("../assets/UberXL.png")
+    image: require("../assets/images/UberXL.png")
   },
   {
     id: "Uber-LUX-789",
     title: "UberLUX",
     multiplier: 1.75,
-    image: require("../assets/UberLUX.png")
+    image: require("../assets/images/UberLUX.png")
   },
 ];
 
