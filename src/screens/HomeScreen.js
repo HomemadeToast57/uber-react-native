@@ -1,10 +1,8 @@
 import React, { useEffect } from "react";
 import {
   StyleSheet,
-  Text,
   View,
   Image,
-  ScrollView,
   SafeAreaView,
 } from "react-native";
 import tw from "tailwind-react-native-classnames";
@@ -52,9 +50,7 @@ const HomeScreen = () => {
             height: 100,
             resizeMode: "contain",
           }}
-          source={{
-            uri: "https://links.papareact.com/gzs",
-          }}
+          source={require("../assets/images/UberLogo.png")}
         />
 
         <GooglePlacesAutocomplete
@@ -101,10 +97,3 @@ const HomeScreen = () => {
 };
 
 export default HomeScreen;
-
-const styles = StyleSheet.create({
-  text: {
-    fontSize: 30,
-    color: "blue",
-  },
-});

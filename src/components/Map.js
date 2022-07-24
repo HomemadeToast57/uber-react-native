@@ -3,13 +3,19 @@ import React, { useEffect, useRef } from "react";
 import MapView from "react-native-maps";
 import tw from "tailwind-react-native-classnames";
 import { useDispatch, useSelector } from "react-redux";
-import { selectDestination, selectOrigin, setTravelTimeInformation } from "../slices/navSlice";
+import {
+  selectDestination,
+  selectOrigin,
+  selectTravelTimeInformation,
+  setTravelTimeInformation,
+} from "../slices/navSlice";
 import MapViewDirections from "react-native-maps-directions";
 import { GOOGLE_MAPS_APIKEY } from "@env";
 
 const Map = () => {
   const origin = useSelector(selectOrigin);
   const destination = useSelector(selectDestination);
+  const travelTimeInformation = useSelector(selectTravelTimeInformation);
   const mapRef = useRef(null);
   dispatch = useDispatch();
 
@@ -34,7 +40,11 @@ const Map = () => {
       )
         .then((res) => res.json())
         .then((data) => {
-          dispatch(setTravelTimeInformation(data.rows[0].elements[0]));
+          if (data.rows[0].elements[0].status == "ZERO_RESULTS") {
+            dispatch(setTravelTimeInformation(null));
+          } else {
+            dispatch(setTravelTimeInformation(data.rows[0].elements[0]));
+          }
         });
     };
 
@@ -58,13 +68,14 @@ const Map = () => {
         left: 5,
       }}
     >
-      {origin && destination && (
+      {origin && destination && travelTimeInformation?.duration && (
         <MapViewDirections
           origin={origin.description}
           destination={destination.description}
           apikey={`${GOOGLE_MAPS_APIKEY}`}
           strokeWidth={3}
           strokeColor="black"
+          mode="DRIVING"
         />
       )}
 

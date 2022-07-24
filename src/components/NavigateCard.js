@@ -62,8 +62,6 @@ const NavigateCard = () => {
                   description: data.description,
                 })
               );
-
-              // navigation.navigate("RideOptionsCard");
             }}
           />
         </View>
@@ -83,11 +81,6 @@ const NavigateCard = () => {
           <Icon name="car" type="font-awesome" color="white" size={16} />
           <Text style={tw`text-white text-center`}> {!destination ? "Choose a Destination" : "Look for Rides"}</Text>
         </TouchableOpacity>
-
-        {/* <TouchableOpacity style={tw`flex flex-row justify-between w-24 px-4 py-3 rounded-full`}>
-          <Icon name="car" type="font-awesome" color="black" size={16} />
-          <Text style={tw`text-black text-center`}>Eats</Text>
-        </TouchableOpacity> */}
       </View>
     </SafeAreaView>
   );

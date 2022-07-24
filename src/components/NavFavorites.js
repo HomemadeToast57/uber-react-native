@@ -14,13 +14,13 @@ const data = [
     id: 123,
     icon: "home",
     location: "Home",
-    destination: "Code Street, London, UK",
+    destination: "1 Infinite Loop, Cupertino, CA, USA",
   },
   {
     id: 456,
     icon: "briefcase",
     location: "Work",
-    destination: "London Eye, London, UK",
+    destination: "1 Hacker Way, Menlo Park, CA, USA",
   },
 ];
 
